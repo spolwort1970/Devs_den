@@ -9,19 +9,29 @@
     <ul id="nav-main" class="right hide-on-med-and-down">
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Home</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Login</a></li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/about']" class="key letter" value="Refresh Page" onClick="window.location.reload()">About</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/register']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Register</a></li>
+      <!-- <li>&nbsp;&nbsp;&nbsp;</li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Dev Login</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
-      <li><a [routerLink]="['/']" class="nav-link">Logout</a></li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/emplogin']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Employer Login</a></li>
+       <li>&nbsp;&nbsp;&nbsp;</li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/profile']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Dev Profile</a></li>
+      <li>&nbsp;&nbsp;&nbsp;</li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/empprofile']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Employer Profile</a></li>
+      <li>&nbsp;&nbsp;&nbsp;</li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Logout</a></li>
+      <li>&nbsp;&nbsp;&nbsp;</li> -->
     </ul>
 
 
     <ul id="nav-mobile" class="side-nav">
       <li><a [routerLink]="['/']" value="Refresh Page" onClick="window.location.reload()">Home</a></li>
+      <li><a [routerLink]="['/about']" value="Refresh Page" onClick="window.location.reload()">About</a></li>
       <li><a [routerLink]="['/login']" value="Refresh Page" onClick="window.location.reload()">Login</a></li>
+      <!-- <li><a [routerLink]="['/home']" value="Refresh Page" onClick="window.location.reload()">Logout</a></li> -->
       <li><a [routerLink]="['/register']" value="Refresh Page" onClick="window.location.reload()">Register</a></li>
-      <li><a [routerLink]="['/']" class="nav-link">Logout</a></li>
     </ul>
 
   </div>

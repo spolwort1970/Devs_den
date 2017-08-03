@@ -5,33 +5,49 @@ import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { LoginComponent } from './components/login/login.component';
+// Navigation Components
 import { HomeComponent } from './components/home/home.component';
-import { RegisterComponent } from './components/register/register.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+// User Components
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AboutComponent } from './components/about/about.component';
+import { RegisterComponent } from './components/register/register.component';
+import { EmpRegisterComponent } from './components/emp-register/emp-register.component';
+import { LoginComponent } from './components/login/login.component';
+import { EmpLoginComponent } from './components/emp-login/emp-login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { EmpProfileComponent } from './components/emp-profile/emp-profile.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'dashboard', component: DashboardComponent},  
+  {path: 'about', component: AboutComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'empregister', component: EmpRegisterComponent},  
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'emplogin', component: EmpLoginComponent},  
+  {path: 'profile', component: ProfileComponent},
+  {path: 'empprofile', component: EmpProfileComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    LoginComponent,
+    // Navigation Modules  
     HomeComponent,
-    RegisterComponent,
-    DashboardComponent,
-    ProfileComponent
+    NavbarComponent,
+    // User Modules
+    DashboardComponent,    
+    AboutComponent,
+    RegisterComponent, // Dev Register
+    EmpRegisterComponent, // Employer Register  
+    LoginComponent, // Dev Login
+    EmpLoginComponent, // Employer Login      
+    ProfileComponent, // Dev Profile
+    EmpProfileComponent // Employer Profile    
   ],
   imports: [
     BrowserModule,
