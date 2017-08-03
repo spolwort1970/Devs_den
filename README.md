@@ -1,7 +1,11 @@
 # Devs_den
 
+clone repo
+cd into /devs_den
+run 'npm install'
+
 To start node server:
-cd /devs_den && run nodemon
+/devs_den, run 'nodemon'
 
 To start web server:
-cd /devs_den/dev-src && run ng serve
+/devs_den/dev-src, run 'ng serve'
