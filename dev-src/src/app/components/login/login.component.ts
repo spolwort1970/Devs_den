@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
+
+=======
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+>>>>>>> Employer
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+<<<<<<< HEAD
+
+  constructor() { }
+=======
   username: String;
   password: String;
 
@@ -14,10 +22,13 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router
   ) { }
+>>>>>>> Employer
 
   ngOnInit() {
   }
 
+<<<<<<< HEAD
+=======
   onLoginSubmit() {
     const dev = {
       username: this.username,
@@ -36,4 +47,5 @@ export class LoginComponent implements OnInit {
     });
   }
 
+>>>>>>> Employer
 }

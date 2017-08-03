@@ -1,0 +1,42 @@
+.btn-large {
+  background-color: #001028;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #888888;
+}
+
+.btn-large:hover {
+  border-radius: 5px;
+  color: #4dff00;
+  border: 3px solid #4dff00;
+  box-shadow: 4px 4px 2px #4dff00;
+}
+
+.header col s12 {
+  color: #001028;
+}
+
+.icon-block {
+  color: #001028;
+  cursor: default;
+}
+
+/* .material-icons:hover {
+  color: #4dff00;
+   box-shadow: 6px 6px 4px #4dff00; 
+} */
+
+.page-footer {
+  background-color: #001028;
+}
+
+.page-footer:hover {
+  color: #4dff00;
+  background-color: #001433;
+  /* font-style: italic; */
+  box-shadow: -4px -4px 2px #4dff00;
+}
+
+#icon {
+  height: 40px;
+  width: auto;
+}
