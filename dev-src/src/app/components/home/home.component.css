@@ -1,0 +1,23 @@
+.btn-large {
+  background-color: #001433;
+  border-radius: 5px;
+}
+
+.btn-large:hover {
+  background-color: #ffffff;
+  color: #001433;
+  box-shadow: 5px 5px 2px #888888;
+}
+
+.page-footer {
+  background-color: #001433;
+}
+.header col s12 {
+  color: #001433;
+}
+.icon-block {
+  color: #001433;
+}
+/* .icon-block:hover {
+  color: #4dff00;
+} */
