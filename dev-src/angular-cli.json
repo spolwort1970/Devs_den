@@ -7,27 +7,19 @@
     {
       "root": "src",
       "outDir": "../public",
-<<<<<<< HEAD
-      "assets": ["assets", "favicon.ico"],
-=======
       "assets": [
         "assets",
         "favicon.ico"
       ],
->>>>>>> Employer
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "app",
-<<<<<<< HEAD
-      "styles": ["styles.css"],
-=======
       "styles": [
         "styles.css"
       ],
->>>>>>> Employer
       "scripts": [],
       "environments": {
         "source": "environments/environment.ts",

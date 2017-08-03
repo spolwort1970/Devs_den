@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import {Router} from '@angular/router';
 
 import {ValidateService} from '../../services/validate.service';
 import {AuthService} from '../../services/auth.service';
 
->>>>>>> Employer
 
 @Component({
   selector: 'app-register',
@@ -15,9 +12,6 @@ import {AuthService} from '../../services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-=======
   name: String;
   username: String;
   email: String;
@@ -28,13 +22,10 @@ export class RegisterComponent implements OnInit {
     private authService: AuthService,
     private router: Router
   ) { }
->>>>>>> Employer
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
-=======
   onRegisterSubmit() {
     const dev = {
       name: this.name,
@@ -66,5 +57,4 @@ export class RegisterComponent implements OnInit {
       }
     });
   }
->>>>>>> Employer
 }
