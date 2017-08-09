@@ -9,15 +9,26 @@
         <h4 class="header col s12 light"></h4>
       </div>
       <div class="row center">
-        <a [routerLink]="['/register']" id="download-button" class="btn-large">Get Started</a>
+        <a [routerLink]="['/getstarted']" id="download-button" class="waves-effect waves-light btn-large">Get Started</a>
       </div>
       <br><br>
 
     </div>
   </div>
+
   <!-- Parallax Image #1 -->
-  <div class="parallax"><img src="https://image.ibb.co/jxcwEk/background_11.png" alt="Unsplashed background img 1"></div>
+  <div class="parallax"><img height="460px" src="https://image.ibb.co/jxcwEk/background_11.png" alt="Unsplashed background img 1"></div>
+
 </div>
+
+
+<!-- Developer Section -->
+<!-- <ul class="collapsible" data-collapsible="expandable">
+  <li>
+    <div class="center collapsible-header"><i class="material-icons">code</i>Developers</div>
+    <div class="collapsible-body">
+      <span> -->
+
 <!-- Developer Section -->
 <div class="container">
   <div class="section">
@@ -51,6 +62,10 @@
 
   </div>
 </div>
+<!--
+      </span>
+    </div>
+  </li> -->
 
 <!-- Parallax Image #2   -->
 <div class="parallax-container valign-wrapper">
@@ -64,7 +79,11 @@
   <div class="parallax"><img src="https://image.ibb.co/ha83uk/software.jpg" alt="Unsplashed background img 2"></div>
 </div>
 
-
+<!--   Employer Section   -->
+<!-- <li>
+    <div class="collapsible-header"><i class="material-icons">person</i>Employers</div>
+    <div class="collapsible-body">
+      <span> -->
 <!--   Employer Section   -->
 <div class="container">
   <div class="section">
@@ -98,6 +117,10 @@
 
   </div>
 </div>
+<!--
+      </span>
+    </div>
+  </li> -->
 
 <!-- Parallax Image #3   -->
 <div class="parallax-container valign-wrapper">
@@ -111,25 +134,34 @@
   <div class="parallax"><img src="https://image.ibb.co/hxkGEk/hiring_developer.jpg" alt="Unsplashed background img 3"></div>
 </div>
 
+<!-- <li>
+    <div class="collapsible-header"><i class="material-icons">group</i>About Us</div>
+    <div class="collapsible-body">
+      <span> -->
+
 <div class="container">
   <div class="section">
 
     <div class="row">
       <div class="col s12 center">
-        <img src="https://image.ibb.co/bsJp2F/browser_2.png" height="100px;" alt="coding 1" border="0" />
+        <a [routerLink]="['/about']" class="key letter" value="Refresh Page" onClick="window.location.reload()">
+                <img src="https://image.ibb.co/cgQTKv/Us.png" height="150px" alt="Us" border="0" /></a>
         <p class="center-align light">We specialize in custom full-stack application development. Contact us today for a free estimate.</p>
       </div>
     </div>
 
   </div>
 </div>
+<!-- </span>
+    </div>
+  </li> -->
 
 <!-- Footer Section   -->
 <footer class="page-footer">
-  <div class="container">
+  <div class="center container">
     <div class="footer-copyright">
       <div class="container">
-        Copyright &copy; 2017 Dev:den. All Rights Reserved.
+        &copy; Copyright 2017 Dev:den Development. All Rights Reserved.
       </div>
     </div>
   </div>

@@ -20,6 +20,7 @@ import { EmpProfileComponent } from './components/emp-profile/emp-profile.compon
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
+import { GetStartedComponent } from './components/get-started/get-started.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -47,7 +48,7 @@ const appRoutes: Routes = [
     LoginComponent, // Dev Login
     EmpLoginComponent, // Employer Login      
     ProfileComponent, // Dev Profile
-    EmpProfileComponent // Employer Profile    
+    EmpProfileComponent, GetStartedComponent // Employer Profile    
   ],
   imports: [
     BrowserModule,
