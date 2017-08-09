@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 // Navigation Components
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { GetStartedComponent } from './components/get-started/get-started.component';
 // User Components
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AboutComponent } from './components/about/about.component';
@@ -20,11 +21,11 @@ import { EmpProfileComponent } from './components/emp-profile/emp-profile.compon
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
-import { GetStartedComponent } from './components/get-started/get-started.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'dashboard', component: DashboardComponent},  
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'getstarted', component: GetStartedComponent},
   {path: 'about', component: AboutComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'empregister', component: EmpRegisterComponent},  
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
     // User Modules
     DashboardComponent,    
     AboutComponent,
+    GetStartedComponent,
     RegisterComponent, // Dev Register
     EmpRegisterComponent, // Employer Register  
     LoginComponent, // Dev Login
