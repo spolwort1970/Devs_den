@@ -1,27 +1,33 @@
-
-<h2>Dev Register</h2>
-<div class="row">
-  <form (submit)="onRegisterSubmit()" class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <input [(ngModel)]="name" placeholder="Name" id="first_name" type="text" name="name" class="validate">
+<div class="container center">
+  <div class="row"></div>
+  <h4>Developer Registration</h4>
+  <div class="row">
+    <form (submit)="onRegisterSubmit()" class="col s12">
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="input-field col s4">
+          <input [(ngModel)]="name" placeholder="Name" id="first_name" type="text" name="name" class="validate">
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <input [(ngModel)]="username" placeholder="Username" id="first_name" type="text" name="username" class="validate">
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="input-field col s4">
+          <input [(ngModel)]="username" placeholder="Username" id="first_name" type="text" name="username" class="validate">
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <input [(ngModel)]="password" placeholder="Password" id="password" type="password" name="password" class="validate">
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="input-field col s4">
+          <input [(ngModel)]="password" placeholder="Password" id="password" type="password" name="password" class="validate">
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <input [(ngModel)]="email" placeholder="Email" id="email" type="email" name="email" class="validate">
-        <input class="waves-effect waves-light btn" type="submit" value="Submit">
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="input-field col s4">
+          <input [(ngModel)]="email" placeholder="Email" id="email" type="email" name="email" class="validate">
+          <input class="waves-effect waves-light btn" type="submit" value="Submit">
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
