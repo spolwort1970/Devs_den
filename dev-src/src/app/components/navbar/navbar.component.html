@@ -23,7 +23,7 @@
       <li>&nbsp;&nbsp;&nbsp;</li>
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/empprofile']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Employer Profile</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Logout</a></li>
+      <li><a (click)="onLogoutClick()" class="key letter" value="Refresh Page" href="#">Logout</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/about']" class="key letter" value="Refresh Page" onClick="window.location.reload()">About</a></li>
     </ul>
@@ -37,7 +37,7 @@
       <li><a [routerLink]="['/empregister']" value="Refresh Page" onClick="window.location.reload()">Employer Register</a></li>
       <li><a [routerLink]="['/emplogin']" value="Refresh Page" onClick="window.location.reload()">Employer Login</a></li>
       <li><a [routerLink]="['/empprofile']" value="Refresh Page" onClick="window.location.reload()">Employer Profile</a></li><br/>
-      <li><a [routerLink]="['/']" value="Refresh Page" onClick="window.location.reload()">Logout</a></li>
+      <li><a (click)="onLogoutClick()" href="#">Logout</a></li>
       <li><a [routerLink]="['/about']" value="Refresh Page" onClick="window.location.reload()">About</a></li>
     </ul>
 
