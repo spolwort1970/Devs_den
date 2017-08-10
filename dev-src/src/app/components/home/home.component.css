@@ -16,13 +16,21 @@
 }
 
 .icon-block {
-  color: #001028;
+  /* color: #001028; */
+  background-color: #eeeeee;
   cursor: default;
+  border: 2px solid #bebebe;
+  box-shadow: 6px 6px 3px #888888;
 }
+.about {
+    box-shadow: 6px 6px 3px #888888;
 
-/* .material-icons:hover {
-  color: #4dff00;
-   box-shadow: 6px 6px 4px #4dff00; 
+}
+/*.icon-block:hover {
+  color: #001028;
+  background-color: #d6d6d6;
+  cursor: default;
+  border: 4px inset #4dff00; 
 } */
 
 .page-footer {
@@ -39,4 +47,9 @@
 #icon {
   height: 40px;
   width: auto;
+}
+
+.key-letter {
+    cursor: pointer;
+
 }

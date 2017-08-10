@@ -1,9 +1,19 @@
-<div class="container center">
-  <div class="row"></div>
-  <h4>Developer Profile</h4>
-  <div class="row">
-    <div class="col s4"></div>
-    <div class="col s4"></div>
-    <div class="col s4"></div>
+ <div *ngIf="dev"> 
+
+  <div class="container center">
+    <div class="row"></div>
+    <h4>Profile Page</h4>
+    <div class="row">
+      <div class="col s4"></div>
+      <div class="col s4">
+        <ul class="center list-group">
+          <li class="list-group-item">Name: {{dev.name}}</li>
+          <li class="list-group-item">Username: {{dev.username}}</li>
+          <li class="list-group-item">Email: {{dev.email}}</li>
+        </ul>
+      </div>
+      <div class="col s4"></div>
+    </div>
   </div>
-</div>
+
+ </div> 
