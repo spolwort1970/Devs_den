@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
 
   onRegisterSubmit() {
     const dev = {
+      isDev: true,
       name: this.name,
       username: this.username,
       email: this.email,
@@ -52,7 +53,7 @@ export class RegisterComponent implements OnInit {
         alert('Registered');
         this.router.navigate(['/login']);
       } else {
-        alert('Invalid Dev');
+        alert('Invalid User');
         this.router.navigate(['/register']);
       }
     });
