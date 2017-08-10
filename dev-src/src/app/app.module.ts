@@ -18,21 +18,23 @@ import { LoginComponent } from './components/login/login.component';
 import { EmpLoginComponent } from './components/emp-login/emp-login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EmpProfileComponent } from './components/emp-profile/emp-profile.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
+import {AuthGuard} from './guards/auth.guard';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   {path: 'getstarted', component: GetStartedComponent},
   {path: 'about', component: AboutComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'empregister', component: EmpRegisterComponent},  
   {path: 'login', component: LoginComponent},
   {path: 'emplogin', component: EmpLoginComponent},  
-  {path: 'profile', component: ProfileComponent},
-  {path: 'empprofile', component: EmpProfileComponent}
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  { path: 'empprofile', component: EmpProfileComponent, canActivate: [AuthGuard]}
 ]
 
 @NgModule({
@@ -50,7 +52,7 @@ const appRoutes: Routes = [
     LoginComponent, // Dev Login
     EmpLoginComponent, // Employer Login      
     ProfileComponent, // Dev Profile
-    EmpProfileComponent, GetStartedComponent // Employer Profile    
+    EmpProfileComponent, GetStartedComponent, EditProfileComponent // Employer Profile    
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
