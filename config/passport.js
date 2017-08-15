@@ -1,23 +1,55 @@
+var passport = require('passport');
+var User = require('../models/model_users');
+const config = require('./auth');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
+var LocalStrategy = require('passport-local').Strategy;
 
-const Dev = require('../models/models_devs');
-const config = require('../config/database');
+var localOptions = {
+  usernameField: 'username'
+};
 
-module.exports = function(passport) {
-  let opts = {};
-  opts.jwtFromRequest = ExtractJwt.fromAuthHeader();
-  opts.secretOrKey = config.secret;
-  passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-    Dev.getDevById(jwt_payload._doc._id, (err, dev) => {
+var localLogin = new LocalStrategy(localOptions, function(username, password, done) {
+  User.findOne({
+    username: username
+  }, function(err, user) {
+    if(err) {
+      return done(err);
+    }
+
+    if(!user) {
+      return done(null, false, {error: 'Login failed. Please try again.'});
+    }
+
+    user.comparePassword(password, function(err, isMatch) {
       if(err) {
-        return done(err, false);
+        return done(err);
       }
-      if(dev) {
-        return done(null, dev);
-      } else {
-        return done(null, false);
+      if(!isMatch){
+        return done(null, false, {error: 'Login failed. Please try again'});
       }
+      return done(null, user);
     });
-  }));
-}
+  });
+});
+
+var jwtOptions = {
+  jwtFromRequest: ExtractJwt.fromAuthHeader(),
+  secretOrKey: config.secret
+};
+
+var jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
+  User.findById(payload._id, function(err, user) {
+    if(err) {
+      return done(err, false);
+    }
+    if(user){
+      done(null, user);
+    } else {
+      done(null, false);
+    }
+  });
+});
+
+passport.use(jwtLogin);
+passport.use(localLogin);
