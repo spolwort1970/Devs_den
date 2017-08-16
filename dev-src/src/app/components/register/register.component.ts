@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   username: String;
   email: String;
   password: String;
+  role: String;
 
   constructor(
     private validateService: ValidateService,
@@ -27,28 +28,29 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegisterSubmit() {
-    const dev = {
-      isDev: true,
+    const user = {
+      isUser: true,
       name: this.name,
       username: this.username,
       email: this.email,
-      password: this.password
+      password: this.password,
+      role: this.role
     }
 
     // Required Fields
-    if(! this.validateService.validateRegister(dev)) {
+    if(! this.validateService.validateRegister(user)) {
       alert('Please fill in all fields');
       return false;
     }
 
     // Validate Email
-    if(!this.validateService.validateEmail(dev.email)) {
+    if(!this.validateService.validateEmail(user.email)) {
       alert('Please use a valid email');
       return false;
     }
 
-    // Register dev
-    this.authService.registerDev(dev).subscribe(data => {
+    // Register User
+    this.authService.registerUser(user).subscribe(data => {
       if(data.success) {
         alert('Registered');
         this.router.navigate(['/login']);

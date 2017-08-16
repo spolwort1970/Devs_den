@@ -20,14 +20,14 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginSubmit() {
-    const dev = {
+    const user = {
       username: this.username,
       password: this.password
     }
 
-    this.authService.authenticateDev(dev).subscribe(data => {
+    this.authService.authenticateUser(user).subscribe(data => {
       if(data.success) {
-        this.authService.storeDevData(data.token, data.dev);
+        this.authService.storeUserData(data.token, data.user);
         alert('Success')
         this.router.navigate(['/dashboard'])
       } else {

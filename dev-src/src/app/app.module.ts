@@ -30,9 +30,9 @@ const appRoutes: Routes = [
   {path: 'getstarted', component: GetStartedComponent},
   {path: 'about', component: AboutComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'empregister', component: EmpRegisterComponent},  
+  {path: 'empregister', component: EmpRegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'emplogin', component: EmpLoginComponent},  
+  {path: 'emplogin', component: EmpLoginComponent},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   { path: 'empprofile', component: EmpProfileComponent, canActivate: [AuthGuard]}
 ]
@@ -40,19 +40,19 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    // Navigation Modules  
+    // Navigation Modules
     HomeComponent,
     NavbarComponent,
     // User Modules
-    DashboardComponent,    
+    DashboardComponent,
     AboutComponent,
     GetStartedComponent,
     RegisterComponent, // Dev Register
-    EmpRegisterComponent, // Employer Register  
+    EmpRegisterComponent, // Employer Register
     LoginComponent, // Dev Login
-    EmpLoginComponent, // Employer Login      
+    EmpLoginComponent, // Employer Login
     ProfileComponent, // Dev Profile
-    EmpProfileComponent, GetStartedComponent, EditProfileComponent // Employer Profile    
+    EmpProfileComponent, GetStartedComponent, EditProfileComponent // Employer Profile
   ],
   imports: [
     BrowserModule,
