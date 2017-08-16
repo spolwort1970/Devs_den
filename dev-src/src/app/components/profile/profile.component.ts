@@ -11,13 +11,10 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   dev:Object;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    this.authService.getProfile().subscribe(profile =>{
+    this.authService.getProfile().subscribe(profile => {
       this.dev = profile.dev;
     },
     err => {
@@ -25,5 +22,4 @@ export class ProfileComponent implements OnInit {
       return false;
     });
   }
-
 }

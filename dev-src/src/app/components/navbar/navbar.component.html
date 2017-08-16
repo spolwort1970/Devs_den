@@ -5,38 +5,39 @@
 
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 
+    <!-- *ngIf="auth.loggedIn()" ***Add to <li> to display only if logged in*** -->
+    <!-- *ngIf="!auth.loggedIn()" ***Add to <li> to display only if logged out*** -->
     <ul id="nav-main" class="right hide-on-med-and-down">
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Home</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
-      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/dashboard']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Dashboard</a></li>
+      <!-- <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/dashboard']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Dashboard</a></li>
+      <li>&nbsp;&nbsp;&nbsp;</li> -->
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Login</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/register']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Developer Register</a></li>
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/register']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Register</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Developer Login</a></li>
+      <!-- <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/profile']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Developer Profile</a></li>
+      <li>&nbsp;&nbsp;&nbsp;</li> -->
+      <!-- <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/empregister']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Employer Register</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
-      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/profile']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Developer Profile</a></li>
-      <li>&nbsp;&nbsp;&nbsp;</li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/empregister']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Employer Register</a></li>
-      <li>&nbsp;&nbsp;&nbsp;</li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/emplogin']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Employer Login</a></li>
-      <li>&nbsp;&nbsp;&nbsp;</li>
-      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/empprofile']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Employer Profile</a></li>
-      <li>&nbsp;&nbsp;&nbsp;</li>
-      <li> <a (click)="onLogoutClick()" class="key letter" value="Refresh Page" onClick="window.location.reload()" href="#">Logout</a></li>
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/emplogin']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Employer Login</a></li>
+      <li>&nbsp;&nbsp;&nbsp;</li> -->
+      <!-- <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/empprofile']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Employer Profile</a></li>
+      <li>&nbsp;&nbsp;&nbsp;</li> -->
+      <li *ngIf="authService.loggedIn()"> <a (click)="onLogoutClick()" class="key letter" value="Refresh Page" onClick="window.location.reload()" href="#">Logout</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/about']" class="key letter" value="Refresh Page" onClick="window.location.reload()">About</a></li>
     </ul>
-<!-- *ngIf="authService.loggedIn()" -->
 
     <ul id="nav-mobile" class="side-nav">
       <li><a [routerLink]="['/']" value="Refresh Page" onClick="window.location.reload()">Home</a></li>
-      <li *ngIf="authService.loggedIn()"><a [routerLink]="['/dashboard']" value="Refresh Page" onClick="window.location.reload()">Dashboard</a></li><br/>
-      <li><a [routerLink]="['/register']" value="Refresh Page" onClick="window.location.reload()">Developer Register</a></li>
-      <li><a [routerLink]="['/login']" value="Refresh Page" onClick="window.location.reload()">Developer Login</a></li>
-      <li *ngIf="authService.loggedIn()"><a [routerLink]="['/profile']" value="Refresh Page" onClick="window.location.reload()">Developer Profile</a></li><br/>
-      <li><a [routerLink]="['/empregister']" value="Refresh Page" onClick="window.location.reload()">Employer Register</a></li>
-      <li><a [routerLink]="['/emplogin']" value="Refresh Page" onClick="window.location.reload()">Employer Login</a></li>
-      <li *ngIf="authService.loggedIn()"><a [routerLink]="['/empprofile']" value="Refresh Page" onClick="window.location.reload()">Employer Profile</a></li><br/>
+      <!-- <li *ngIf="authService.loggedIn()"><a [routerLink]="['/dashboard']" value="Refresh Page" onClick="window.location.reload()">Dashboard</a></li><br/> -->
+      <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/register']" value="Refresh Page" onClick="window.location.reload()">Register</a></li>
+      <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/login']" value="Refresh Page" onClick="window.location.reload()">Login</a></li>
+      <!-- <li *ngIf="authService.loggedIn()"><a [routerLink]="['/profile']" value="Refresh Page" onClick="window.location.reload()">Developer Profile</a></li><br/> -->
+      <!-- <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/empregister']" value="Refresh Page" onClick="window.location.reload()">Employer Register</a></li>
+      <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/emplogin']" value="Refresh Page" onClick="window.location.reload()">Employer Login</a></li> -->
+      <!-- <li *ngIf="authService.loggedIn()"><a [routerLink]="['/empprofile']" value="Refresh Page" onClick="window.location.reload()">Employer Profile</a></li><br/> -->
       <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="#">Logout</a></li>
       <li><a [routerLink]="['/about']" value="Refresh Page" onClick="window.location.reload()">About</a></li>
     </ul>

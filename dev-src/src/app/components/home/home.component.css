@@ -24,8 +24,13 @@
 }
 .about {
     box-shadow: 6px 6px 3px #888888;
-
 }
+
+.about:hover {
+  border: 3px solid #4dff00;
+  box-shadow: 6px 6px 3px #4dff00;
+}
+
 /*.icon-block:hover {
   color: #001028;
   background-color: #d6d6d6;
@@ -53,3 +58,7 @@
     cursor: pointer;
 
 }
+
+/* .us {
+  background-color: #323f52;
+} */

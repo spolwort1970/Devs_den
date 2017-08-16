@@ -47,6 +47,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/devs', devs);
 app.use('/employers', employers);
 
+// Index Route
+app.get('/', (req, res) => {
+  res.send("Invalid Endpoint");
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 app.listen(port, function() {
   console.log('Listening on port' + port)
 });

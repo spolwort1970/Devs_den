@@ -33,6 +33,15 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  getDashboard() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/devs/dashboard', { headers: headers })
+      .map(res => res.json());
+  }
+
   storeDevData(token, dev) {
     localStorage.setItem('id_token', token);
     localStorage.setItem('dev', JSON.stringify(dev));
@@ -46,7 +55,7 @@ export class AuthService {
   }
 
   loggedIn(){
-    return tokenNotExpired();
+    return tokenNotExpired('id_token');
   }
 
   logout() {
