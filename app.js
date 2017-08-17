@@ -1,55 +1,43 @@
-const express = require ('express');
-const path = require ('path');
-const bodyParser = require ('body-parser');
-const passport = require ('passport');
-const cors = require ('cors');
-const mongoose = require ('mongoose');
-const config = require ('./config/database');
-
-mongoose.connect(config.database, {
-  useMongoClient: true
+const express = require("express");
+const path = require("path");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const passport = require("passport");
+const mongoose = require("mongoose");
+const config = require("./config/database");
+// Connect To Database
+mongoose.connect(config.database);
+// On Connection
+mongoose.connection.on("connected", () => {
+  console.log("Connected to database " + config.database);
 });
-
-mongoose.connection.on('connected', function () {
-  console.log('Connected to database');
+// On Error
+mongoose.connection.on("error", err => {
+  console.log("Database error: " + err);
 });
-
-app = express();
-
-// Cors MW
-app.use(cors());
-
+const app = express();
+const users = require("./routes/users");
 // Port Number
-port = process.env.PORT || 3000;
-
-// Body Parse MW
+const port = process.env.PORT || 3000;
+// CORS Middleware
+app.use(cors());
+// Set Static Folder
+app.use(express.static(path.join(__dirname, "public")));
+// Body Parser Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
-// Passport MW
+// Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
-// require('./config/passport')(passport);
-
-// Set static folder, angular client side
-app.use(express.static(path.join(__dirname, 'public')));
-
-var users = require ('./routes/users');
-
-
-app.use('/users', users);
-
-
+require("./config/passport")(passport);
+app.use("/users", users);
 // Index Route
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.send("Invalid Endpoint");
 });
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
-
-app.listen(port, function() {
-  console.log('Listening on port' + port)
+// Start Server
+app.listen(port, () => {
+  console.log("Server started on port " + port);
 });
