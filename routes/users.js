@@ -65,4 +65,34 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res,
   res.json({user: req.user});
 });
 
+router.put('/profile/:id', (req, res, next) => {
+  User.findOne({_id: req.params.id}, function (err, user) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      user.name = req.body.name || user.name;
+      user.email = req.body.email || user.email;
+      user.username = req.body.username || user.username;
+      user.password = req.body.password || user.password;
+
+      user.save(function (err, user) {
+        if(err) {
+          res.status(500).send(err)
+        }
+        res.json(user);
+      });
+    }
+  });
+
+});
+
+router.delete('/profile/:id', (req, res, next) => {
+  User.findOne({_id: req.params.id}).remove(function(err, user) {
+    if (err) {
+      res.json({success: false, message: 'Cannot delete'})
+    }
+    res.json({success: true, message: 'Deleted'})
+  })
+})
+
 module.exports = router;

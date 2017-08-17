@@ -37,6 +37,8 @@ export class RegisterComponent implements OnInit {
       role: this.role
     }
 
+    console.log(user);
+
     // Required Fields
     if(! this.validateService.validateRegister(user)) {
       alert('Please fill in all fields');
