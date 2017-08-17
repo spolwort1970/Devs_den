@@ -3,7 +3,7 @@
   <h4>Register with Dev:den</h4>
   <div class="row">
     <form (submit)="onRegisterSubmit()" class="col s12">
-
+      
       <div class="row">
         <div class="col s4"></div>
         <div class="input-field col s4">
@@ -35,10 +35,22 @@
       <div class="row">
         <div class="col s4"></div>
         <div class="col s4">
-          <input class="waves-effect waves-light btn" type="submit" value="Submit">        
+          <select type="String" [(ngModel)]="user.role">
+            <option [ngValue]="developer">Developer</option>
+            <option [ngValue]="employer">Employer</option>
+          </select>
         </div>
+        <br />
       </div>
 
-    </form>
-  </div>
-</div>
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4">
+          <input class="waves-effect waves-light btn" type="submit" value="Submit">
+        </div>
+      </div>
+      
+    </div>
+  </div>      
+  
+  

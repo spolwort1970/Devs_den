@@ -13,18 +13,21 @@ import { GetStartedComponent } from './components/get-started/get-started.compon
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AboutComponent } from './components/about/about.component';
 import { RegisterComponent } from './components/register/register.component';
-import { EmpRegisterComponent } from './components/emp-register/emp-register.component';
-import { LoginComponent } from './components/login/login.component';
-import { EmpLoginComponent } from './components/emp-login/emp-login.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { EmpProfileComponent } from './components/emp-profile/emp-profile.component';
-import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { LoginComponent } from "./components/login/login.component";
+import { ProfileComponent } from "./components/profile/profile.component";
+import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
+
+// Deprecated Components
+// import { EmpRegisterComponent } from './components/emp-register/emp-register.component';
+// import { EmpLoginComponent } from './components/emp-login/emp-login.component';
+// import { EmpProfileComponent } from './components/emp-profile/emp-profile.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 
 const appRoutes: Routes = [
+
   {path: '', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   {path: 'getstarted', component: GetStartedComponent},
@@ -47,6 +50,7 @@ const appRoutes: Routes = [
     // User Modules
     DashboardComponent,
     AboutComponent,
+
     GetStartedComponent,
     RegisterComponent, 
     EmpRegisterComponent, 
@@ -57,6 +61,7 @@ const appRoutes: Routes = [
     GetStartedComponent, 
     EditProfileComponent 
   ],
+  
   imports: [
     BrowserModule,
     FormsModule,
@@ -66,4 +71,4 @@ const appRoutes: Routes = [
   providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

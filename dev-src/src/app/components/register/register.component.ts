@@ -11,13 +11,16 @@ import {GetStartedComponent} from '../get-started/get-started.component';
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
+
+
   roleType: GetStartedComponent;
+
   name: String;
   username: String;
   email: String;
   password: String;
   role: String;
-
+  
   constructor(
     private validateService: ValidateService,
     private authService: AuthService,
@@ -31,6 +34,7 @@ export class RegisterComponent implements OnInit {
     // console.log("selected: " + $event.target.value);
     // console.log(this.role);
   }
+
 
   onRegisterSubmit() {
     const user = {
