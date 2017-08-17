@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 
 import {ValidateService} from '../../services/validate.service';
 import {AuthService} from '../../services/auth.service';
-
+import {GetStartedComponent} from '../get-started/get-started.component';
 
 @Component({
   selector: "app-register",
@@ -11,13 +11,15 @@ import {AuthService} from '../../services/auth.service';
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
+
+
+  roleType: GetStartedComponent;
+
   name: String;
   username: String;
   email: String;
   password: String;
-  role: [ {
-    name: "String"
-  } ];
+  role: String;
   
   constructor(
     private validateService: ValidateService,
@@ -27,13 +29,20 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {}
 
+  onInput($event) {
+    // $event.preventDefault();
+    // console.log("selected: " + $event.target.value);
+    // console.log(this.role);
+  }
+
+
   onRegisterSubmit() {
     const user = {
       name: this.name,
       username: this.username,
       email: this.email,
       password: this.password,
-      role: this.role
+      role: this.roleType.role
     };
 
     // Required Fields
@@ -48,7 +57,7 @@ export class RegisterComponent implements OnInit {
       return false;
     }
 
-    // Register user
+    // Register User
     this.authService.registerUser(user).subscribe(data => {
       if (data.success) {
         alert("Registered");

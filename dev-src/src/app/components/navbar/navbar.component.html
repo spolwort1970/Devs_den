@@ -14,7 +14,7 @@
       <li>&nbsp;&nbsp;&nbsp;</li> -->
       <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Login</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
-      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/register']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Register</a></li>
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/getstarted']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Register</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
       <!-- <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/profile']" class="key letter" value="Refresh Page" onClick="window.location.reload()">Developer Profile</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li> -->
@@ -32,7 +32,7 @@
     <ul id="nav-mobile" class="side-nav">
       <li><a [routerLink]="['/']" value="Refresh Page" onClick="window.location.reload()">Home</a></li>
       <!-- <li *ngIf="authService.loggedIn()"><a [routerLink]="['/dashboard']" value="Refresh Page" onClick="window.location.reload()">Dashboard</a></li><br/> -->
-      <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/register']" value="Refresh Page" onClick="window.location.reload()">Register</a></li>
+      <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/getstarted']" value="Refresh Page" onClick="window.location.reload()">Register</a></li>
       <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/login']" value="Refresh Page" onClick="window.location.reload()">Login</a></li>
       <!-- <li *ngIf="authService.loggedIn()"><a [routerLink]="['/profile']" value="Refresh Page" onClick="window.location.reload()">Developer Profile</a></li><br/> -->
       <!-- <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/empregister']" value="Refresh Page" onClick="window.location.reload()">Employer Register</a></li>

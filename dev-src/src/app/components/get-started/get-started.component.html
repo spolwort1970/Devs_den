@@ -6,10 +6,10 @@
   <div class="row">
     <div class="col s3"></div>
     <div class="col s3">
-      <a [routerLink]="['/register']" id="download-button" class="btn-large">Developer</a>
+        <a [(ngModel)]="role" placeholder="Developer" id="role" type="text" name="role" class="btn-large" value="Developer">Developer</a>
     </div>
     <div class="col s3">
-      <a [routerLink]="['/register']" id="download-button" class="btn-large">Employer</a>
+        <a [(ngModel)]="role" placeholder="Employer" id="role" type="text" name="role" class="btn-large" value="Employer">Employer</a>
     </div>
     <div class="col s3"></div>
   </div>

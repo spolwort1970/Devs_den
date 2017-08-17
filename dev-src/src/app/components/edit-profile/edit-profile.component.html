@@ -1,3 +1,29 @@
-<p>
-  edit-profile works!
-</p>
+<div *ngIf="user">
+
+  <div class="container center">
+    <div class="row"></div>
+    <h5>Edit Profile</h5>
+    <div class="row">
+      <div class="col s4"></div>
+
+      <div class="col s4">
+        <ul class="center list-group">
+          <li class="list-group-item">Name: {{user.name}}</li>
+          <li class="list-group-item">Username: {{user.username}}</li>
+          <li class="list-group-item">Email: {{user.email}}</li>
+        </ul>
+      </div>
+      <div class="col s4"></div>
+    </div>
+
+    <div class="row">
+      <div class="col s4"></div>
+      <div class="col s4">
+        <a [routerLink]="['/profile']" id="download-button" class="waves-effect waves-light btn-large">Back to Profile</a>
+      </div>
+      <div class="col s4"></div>
+    </div>
+
+  </div>
+
+</div>

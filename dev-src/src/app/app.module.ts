@@ -27,19 +27,19 @@ import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 
 const appRoutes: Routes = [
-  { path: "", component: HomeComponent },
-  { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard]},
-  { path: "about", component: AboutComponent },
-  { path: "register", component: RegisterComponent },
-  { path: "login", component: LoginComponent },
-  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] }
 
-  // Deprecated Routes
-  // {path: 'empprofile', component: EmpProfileComponent, canActivate: [AuthGuard]}
-  // {path: 'getstarted', component: GetStartedComponent},
-  // {path: 'emplogin', component: EmpLoginComponent},
-  // {path: 'empregister', component: EmpRegisterComponent},
-];
+  {path: '', component: HomeComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
+  {path: 'getstarted', component: GetStartedComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'empregister', component: EmpRegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'emplogin', component: EmpLoginComponent},
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'empprofile', component: EmpProfileComponent, canActivate: [AuthGuard]},
+  {path: 'editprofile', component: EditProfileComponent}
+]
 
 @NgModule({
   declarations: [
@@ -50,18 +50,18 @@ const appRoutes: Routes = [
     // User Modules
     DashboardComponent,
     AboutComponent,
-    RegisterComponent,
-    LoginComponent,
-    ProfileComponent,
-    EditProfileComponent
 
-    // Deprecated Modules
-    // EmpLoginComponent, 
-    // EmpRegisterComponent, 
-    // EmpProfileComponent, 
-    // GetStartedComponent,
-    // GetStartedComponent,
+    GetStartedComponent,
+    RegisterComponent, 
+    EmpRegisterComponent, 
+    LoginComponent, 
+    EmpLoginComponent, 
+    ProfileComponent, 
+    EmpProfileComponent, 
+    GetStartedComponent, 
+    EditProfileComponent 
   ],
+  
   imports: [
     BrowserModule,
     FormsModule,

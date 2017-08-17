@@ -3,7 +3,6 @@ const bcrypt = require ('bcryptjs');
 const config = require ('../config/database');
 var Schema = mongoose.Schema;
 
-
 // Subject to change
 var UserSchema = new Schema({
   name: {
@@ -23,8 +22,7 @@ var UserSchema = new Schema({
     required: true
   },
   role: {
-    type: String,
-    required: true
+    type: String
   },
   languages: [
     {
@@ -67,3 +65,4 @@ UserSchema.methods.comparePassword = function(passwordAttempt, cb){
 }
 
 module.exports = mongoose.model('User', UserSchema);
+
