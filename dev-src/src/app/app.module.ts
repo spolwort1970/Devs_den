@@ -13,46 +13,54 @@ import { GetStartedComponent } from './components/get-started/get-started.compon
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AboutComponent } from './components/about/about.component';
 import { RegisterComponent } from './components/register/register.component';
-import { EmpRegisterComponent } from './components/emp-register/emp-register.component';
-import { LoginComponent } from './components/login/login.component';
-import { EmpLoginComponent } from './components/emp-login/emp-login.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { EmpProfileComponent } from './components/emp-profile/emp-profile.component';
-import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { LoginComponent } from "./components/login/login.component";
+import { ProfileComponent } from "./components/profile/profile.component";
+import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
+
+// Deprecated Components
+// import { EmpRegisterComponent } from './components/emp-register/emp-register.component';
+// import { EmpLoginComponent } from './components/emp-login/emp-login.component';
+// import { EmpProfileComponent } from './components/emp-profile/emp-profile.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: 'getstarted', component: GetStartedComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'empregister', component: EmpRegisterComponent},  
-  {path: 'login', component: LoginComponent},
-  {path: 'emplogin', component: EmpLoginComponent},  
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
-  { path: 'empprofile', component: EmpProfileComponent, canActivate: [AuthGuard]}
-]
+  { path: "", component: HomeComponent },
+  { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard]},
+  { path: "about", component: AboutComponent },
+  { path: "register", component: RegisterComponent },
+  { path: "login", component: LoginComponent },
+  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] }
+
+  // Deprecated Routes
+  // {path: 'empprofile', component: EmpProfileComponent, canActivate: [AuthGuard]}
+  // {path: 'getstarted', component: GetStartedComponent},
+  // {path: 'emplogin', component: EmpLoginComponent},
+  // {path: 'empregister', component: EmpRegisterComponent},
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    // Navigation Modules  
+    // Navigation Modules
     HomeComponent,
     NavbarComponent,
     // User Modules
-    DashboardComponent,    
+    DashboardComponent,
     AboutComponent,
-    GetStartedComponent,
-    RegisterComponent, // Dev Register
-    EmpRegisterComponent, // Employer Register  
-    LoginComponent, // Dev Login
-    EmpLoginComponent, // Employer Login      
-    ProfileComponent, // Dev Profile
-    EmpProfileComponent, GetStartedComponent, EditProfileComponent // Employer Profile    
+    RegisterComponent,
+    LoginComponent,
+    ProfileComponent,
+    EditProfileComponent
+
+    // Deprecated Modules
+    // EmpLoginComponent, 
+    // EmpRegisterComponent, 
+    // EmpProfileComponent, 
+    // GetStartedComponent,
+    // GetStartedComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,4 +71,4 @@ const appRoutes: Routes = [
   providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

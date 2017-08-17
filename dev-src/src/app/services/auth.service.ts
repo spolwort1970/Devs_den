@@ -6,21 +6,21 @@ import {tokenNotExpired} from 'angular2-jwt';
 @Injectable()
 export class AuthService {
   authToken: any;
-  dev: any;
+  user: any;
 
   constructor(private http:Http) { }
 
-  registerDev(dev) {
+  registerUser(user) {
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3000/devs/register', dev, {headers: headers})
+    return this.http.post('http://localhost:3000/users/register', user, {headers: headers})
       .map(res => res.json());
   }
 
-  authenticateDev(dev) {
+  authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3000/devs/authenticate', dev, {headers: headers})
+    return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers})
       .map(res => res.json());
   }
 
@@ -29,7 +29,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);    
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/devs/profile', { headers: headers })
+    return this.http.get('http://localhost:3000/users/profile', { headers: headers })
       .map(res => res.json());
   }
 
@@ -38,15 +38,15 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/devs/dashboard', { headers: headers })
+    return this.http.get('http://localhost:3000/users/dashboard', { headers: headers })
       .map(res => res.json());
   }
 
-  storeDevData(token, dev) {
+  storeUserData(token, user) {
     localStorage.setItem('id_token', token);
-    localStorage.setItem('dev', JSON.stringify(dev));
+    localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
-    this.dev = dev;
+    this.user = user;
   }
 
   loadToken(){
@@ -60,7 +60,7 @@ export class AuthService {
 
   logout() {
     this.authToken = null;
-    this.dev = null;
+    this.user = null;
     localStorage.clear();
   }
 
