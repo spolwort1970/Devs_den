@@ -2,7 +2,7 @@
 
   <div class="container center">
     <div class="row"></div>
-    <h4>{{user.name}}'s Profile</h4>
+    <h5>{{user.name}}'s Profile</h5>
     <div class="row">
       <div class="col s4"></div>
       <div class="col s4">
@@ -10,6 +10,14 @@
           <li class="list-group-item">Username: {{user.username}}</li>
           <li class="list-group-item">Email: {{user.email}}</li>
         </ul>
+      </div>
+      <div class="col s4"></div>
+    </div>
+
+    <div class="row">
+      <div class="col s4"></div>
+      <div class="col s4">
+        <a [routerLink]="['/editprofile']" id="download-button" class="waves-effect waves-light btn-large">Edit Profile</a>
       </div>
       <div class="col s4"></div>
     </div>
