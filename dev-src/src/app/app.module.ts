@@ -18,9 +18,9 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
 
 // Deprecated Components
-// import { EmpRegisterComponent } from './components/emp-register/emp-register.component';
-// import { EmpLoginComponent } from './components/emp-login/emp-login.component';
-// import { EmpProfileComponent } from './components/emp-profile/emp-profile.component';
+import { EmpRegisterComponent } from './components/emp-register/emp-register.component';
+import { EmpLoginComponent } from './components/emp-login/emp-login.component';
+import { EmpProfileComponent } from './components/emp-profile/emp-profile.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
@@ -52,16 +52,16 @@ const appRoutes: Routes = [
     AboutComponent,
 
     GetStartedComponent,
-    RegisterComponent, 
-    EmpRegisterComponent, 
-    LoginComponent, 
-    EmpLoginComponent, 
-    ProfileComponent, 
-    EmpProfileComponent, 
-    GetStartedComponent, 
-    EditProfileComponent 
+    RegisterComponent,
+    EmpRegisterComponent,
+    LoginComponent,
+    EmpLoginComponent,
+    ProfileComponent,
+    EmpProfileComponent,
+    GetStartedComponent,
+    EditProfileComponent
   ],
-  
+
   imports: [
     BrowserModule,
     FormsModule,
