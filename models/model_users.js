@@ -54,13 +54,11 @@ UserSchema.pre('save', function(next) {
   });
 });
 
-UserSchema.methods.comparePassword = function(passwordAttempt, cb){
-  bcrypt.compare(passwordAttempt, this.password, function(err, isMatch) {
-    if(err) {
-      return cb(err);
-    } else {
-      cb(null, isMatch);
-    }
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+  bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
+    if(err) throw err;
+    callback(null, isMatch);
+
   });
 }
 
