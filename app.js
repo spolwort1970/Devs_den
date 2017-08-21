@@ -1,9 +1,11 @@
 const express = require('express');
+const cloudinary = require('cloudinary');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
+
 const config = require('./config/database');
 
 // Connect To Database
